@@ -277,18 +277,13 @@ namespace WampSharp.Tests.Wampv2.Integration
         //        throw new NotImplementedException();
         //    }
         //}
-        public class MyPositionalSubscriber : IObserver<ValueTuple<string, int, int>>
+        public class MyPositionalSubscriber : IObserver<(string c, int number1, int number2)>
         {
             public string C { get; set; }
             public int Number1 { get; set; }
             public int Number2 { get; set; }
 
-            public void OnNext([TupleElementNames(new string[]
-                                {
-                                    "c",
-                                    "number1",
-                                    "number2"
-                                })] ValueTuple<string, int, int> value)
+            public void OnNext((string c, int number1, int number2) value)
             {
                 this.C = value.Item1;
                 this.Number1 = value.Item2;
@@ -331,20 +326,14 @@ namespace WampSharp.Tests.Wampv2.Integration
         //        throw new NotImplementedException();
         //    }
         //}
-        public class MyKeywordSubscriber : IObserver<ValueTuple<int, int, string, MyClass>>
+        public class MyKeywordSubscriber : IObserver<(int number1, int number2, string c, MyClass d)>
         {
             public int Number1 { get; set; }
             public int Number2 { get; set; }
             public string C { get; set; }
             public MyClass D { get; set; }
 
-            public void OnNext([TupleElementNames(new string[]
-                                {
-                                    "number1",
-                                    "number2",
-                                    "c",
-                                    "d"
-                                })] ValueTuple<int, int, string, MyClass> value)
+            public void OnNext((int number1, int number2, string c, MyClass d) value)
             {
                 this.Number1 = value.Item1;
                 this.Number2 = value.Item2;
@@ -370,17 +359,7 @@ namespace WampSharp.Tests.Wampv2.Integration
         {
         }
 
-        //public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<(int number1, int number2, string c, MyClass d)>
-        //{
-        //}
-        [TupleElementNames(new string[]
-         {
-             "number1",
-             "number2",
-             "c",
-             "d"
-         })]
-        public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<ValueTuple<int, int, string, MyClass>>
+        public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<(int number1, int number2, string c, MyClass d)>
         {
         }
     }
