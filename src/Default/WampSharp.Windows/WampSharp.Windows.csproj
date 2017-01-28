@@ -19,21 +19,10 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-    <EmbeddedResource Include="compiler\resources\**\*" />
-  </ItemGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
     <ProjectReference Include="..\..\WampSharp\WampSharp.csproj" />
-    <PackageReference Include="Microsoft.TargetingPack.Private.WinRT">
-      <Version>1.0.1</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.2.2</Version>
-      <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
 
@@ -46,16 +35,16 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform " Version="5.2.2" />
   </ItemGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0'">
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <NugetTargetMoniker>UAP,Version=v10.0</NugetTargetMoniker>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <TargetFrameworkIdentifier>.NETCore</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <DefineConstants>$(DefineConstants);WINDOWS_UWP;PCL;</DefineConstants>
     <LanguageTargets>$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets</LanguageTargets>
-    <DefineConstants>$(DefineConstants);PCL</DefineConstants>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
     <Description>An implementation of WAMP (The Web Application Messaging Protocol). Supports both WAMPv2 and WAMPv1.</Description>
     <AssemblyTitle>WampSharp</AssemblyTitle>
-    <VersionPrefix>1.2.3</VersionPrefix>
     <Authors>CodeSharp</Authors>
     <TargetFrameworks>net45;net40;netstandard1.1;netstandard1.3;uap10.0;</TargetFrameworks>
+    <DefaultLanguage>en-US</DefaultLanguage>
     <AssemblyName>WampSharp</AssemblyName>
     <PackageTags>websockets;wampws;rpc;pubsub;wampv2</PackageTags>
     <PackageProjectUrl>https://github.com/Code-Sharp/WampSharp/</PackageProjectUrl>
@@ -17,11 +17,6 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-    <EmbeddedResource Include="compiler\resources\**\*" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NETStandard.Library">
       <Version>1.6.0</Version>
@@ -198,13 +193,8 @@
     <PackageReference Include="System.ValueTuple">
       <Version>4.0.0-rc3-24212-01</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.TargetingPack.Private.WinRT">
-      <Version>1.0.1</Version>
-      <PrivateAssets>All</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.2.2</Version>
-      <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' ">
@@ -225,16 +215,16 @@
     <DefineConstants>$(DefineConstants);NET45;NETCORE;PCL;CASTLE;LIBLOG_PUBLIC;LIBLOG_PORTABLE;TPL;ASYNC_LOCAL;ASYNC;WAMPCRA</DefineConstants>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0'">
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <NugetTargetMoniker>UAP,Version=v10.0</NugetTargetMoniker>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <TargetFrameworkIdentifier>.NETCore</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <DefineConstants>$(DefineConstants);WINDOWS_UWP;NET45;NETCORE;PCL;MANUAL_PROXY;DISPATCH_PROXY;LIBLOG_PUBLIC;LIBLOG_PORTABLE;TPL;ASYNC_LOCAL;ASYNC;WAMPCRA;</DefineConstants>
     <LanguageTargets>$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets</LanguageTargets>
-    <DefineConstants>$(DefineConstants);NET45;NETCORE;PCL;MANUAL_PROXY;DISPATCH_PROXY;LIBLOG_PUBLIC;LIBLOG_PORTABLE;TPL;ASYNC_LOCAL;ASYNC;WAMPCRA;</DefineConstants>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>

@@ -12,11 +12,6 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" />
-    <EmbeddedResource Include="compiler\resources\**\*" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\WampSharp\WampSharp.csproj" />
   </ItemGroup>
   <ItemGroup>
