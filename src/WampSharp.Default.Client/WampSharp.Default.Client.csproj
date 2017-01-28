@@ -4,7 +4,7 @@
     <Description>WampSharp above Newtonsoft.Json, Newtonsoft.Msgpack and WebSocket4Net</Description>
     <AssemblyTitle>WampSharp default client binding</AssemblyTitle>
     <Authors>CodeSharp</Authors>
-    <TargetFrameworks>netstandard1.3;uap10.0</TargetFrameworks>
+    <TargetFrameworks>net45;net40;netstandard1.3;uap10.0;</TargetFrameworks>
     <AssemblyName>WampSharp.Default.Client</AssemblyName>
     <PackageTags>websockets;wampws;rpc;pubsub;newtonsoft;json;msgpack;wampv2</PackageTags>
     <PackageProjectUrl>https://github.com/Code-Sharp/WampSharp/</PackageProjectUrl>
@@ -18,20 +18,22 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+  <ItemGroup>
     <ProjectReference Include="..\Default\WampSharp.NewtonsoftJson\WampSharp.NewtonsoftJson.csproj" />
     <ProjectReference Include="..\Default\WampSharp.NewtonsoftMsgpack\WampSharp.NewtonsoftMsgpack.csproj" />
-    <ProjectReference Include="..\Extensions\WampSharp.WebSockets\WampSharp.WebSockets.csproj" />
     <ProjectReference Include="..\WampSharp\WampSharp.csproj" />
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net40' ">
+    <ProjectReference Include="..\Default\WampSharp.WebSocket4Net\WampSharp.WebSocket4Net.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <ProjectReference Include="..\Extensions\WampSharp.WebSockets\WampSharp.WebSockets.csproj" />
+  </ItemGroup>
+
   <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
-    <ProjectReference Include="..\Default\WampSharp.NewtonsoftJson\WampSharp.NewtonsoftJson.csproj" />
-    <ProjectReference Include="..\Default\WampSharp.NewtonsoftMsgpack\WampSharp.NewtonsoftMsgpack.csproj" />
     <ProjectReference Include="..\Default\WampSharp.Windows\WampSharp.Windows.csproj" />
-    <ProjectReference Include="..\WampSharp\WampSharp.csproj">
-      <FromP2P>true</FromP2P>
-    </ProjectReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.2.2</Version>
     </PackageReference>
