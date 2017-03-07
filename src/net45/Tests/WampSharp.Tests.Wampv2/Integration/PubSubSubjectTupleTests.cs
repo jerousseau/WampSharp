@@ -42,8 +42,7 @@ namespace WampSharp.Tests.Wampv2.Integration
                 await topicProxy.Subscribe(myCustomSubscriber,
                                            new SubscribeOptions());
 
-            // subject.OnNext(("Hello", 37, 23));
-            subject.OnNext(ValueTuple.Create("Hello", 37, 23));
+            subject.OnNext(("Hello", 37, 23));
 
             Assert.That(myCustomSubscriber.ArgumentsKeywords, Is.Null.Or.Empty);
 
@@ -83,8 +82,7 @@ namespace WampSharp.Tests.Wampv2.Integration
                 Foo = new[] { 1, 2, 3 }
             };
 
-            // subject.OnNext((37, 23, "Hello", instance))
-            subject.OnNext(ValueTuple.Create(37, 23, "Hello", instance));
+            subject.OnNext((37, 23, "Hello", instance));
 
             Assert.That(myCustomSubscriber.Arguments, Is.Empty);
 
@@ -254,45 +252,17 @@ namespace WampSharp.Tests.Wampv2.Integration
             }
         }
 
-        //public class MyPositionalSubscriber : IObserver<(string, int, int)>
-        //{
-        //    public string C { get; set; }
-        //
-        //    public int Number1 { get; set; }
-        //
-        //    public int Number2 { get; set; }
-        //
-        //    public void OnNext((string c, int number1, int number2) value)
-        //    {
-        //        (C, Number1, Number2) = value;
-        //    }
-        //
-        //    public void OnError(Exception error)
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-        //
-        //    public void OnCompleted()
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-        //}
-        public class MyPositionalSubscriber : IObserver<ValueTuple<string, int, int>>
+        public class MyPositionalSubscriber : IObserver<(string c, int number1, int number2)>
         {
             public string C { get; set; }
+
             public int Number1 { get; set; }
+
             public int Number2 { get; set; }
 
-            public void OnNext([TupleElementNames(new string[]
-                                {
-                                    "c",
-                                    "number1",
-                                    "number2"
-                                })] ValueTuple<string, int, int> value)
+            public void OnNext((string c, int number1, int number2) value)
             {
-                this.C = value.Item1;
-                this.Number1 = value.Item2;
-                this.Number2 = value.Item3;
+                (C, Number1, Number2) = value;
             }
 
             public void OnError(Exception error)
@@ -306,50 +276,19 @@ namespace WampSharp.Tests.Wampv2.Integration
             }
         }
 
-        //public class MyKeywordSubscriber : IObserver<(int number1, int number2, string c, MyClass d)>
-        //{
-        //    public int Number1 { get; set; }
-        //
-        //    public int Number2 { get; set; }
-        //
-        //    public string C { get; set; }
-        //
-        //    public MyClass D { get; set; }
-        //
-        //    public void OnNext((int number1, int number2, string c, MyClass d) value)
-        //    {
-        //        (Number1, Number2, C, D) = value;
-        //    }
-        //
-        //    public void OnError(Exception error)
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-        //
-        //    public void OnCompleted()
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-        //}
-        public class MyKeywordSubscriber : IObserver<ValueTuple<int, int, string, MyClass>>
+        public class MyKeywordSubscriber : IObserver<(int number1, int number2, string c, MyClass d)>
         {
             public int Number1 { get; set; }
+
             public int Number2 { get; set; }
+
             public string C { get; set; }
+
             public MyClass D { get; set; }
 
-            public void OnNext([TupleElementNames(new string[]
-                                {
-                                    "number1",
-                                    "number2",
-                                    "c",
-                                    "d"
-                                })] ValueTuple<int, int, string, MyClass> value)
+            public void OnNext((int number1, int number2, string c, MyClass d) value)
             {
-                this.Number1 = value.Item1;
-                this.Number2 = value.Item2;
-                this.C = value.Item3;
-                this.D = value.Item4;
+                (Number1, Number2, C, D) = value;
             }
 
             public void OnError(Exception error)
@@ -363,24 +302,11 @@ namespace WampSharp.Tests.Wampv2.Integration
             }
         }
 
-        //public class MyPositionalTupleEventConverter : WampEventValueTupleConverter<(string, int, int)>
-        //{
-        //}
-        public class MyPositionalTupleEventConverter : WampEventValueTupleConverter<ValueTuple<string, int, int>>
+        public class MyPositionalTupleEventConverter : WampEventValueTupleConverter<(string, int, int)>
         {
         }
 
-        //public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<(int number1, int number2, string c, MyClass d)>
-        //{
-        //}
-        [TupleElementNames(new string[]
-         {
-             "number1",
-             "number2",
-             "c",
-             "d"
-         })]
-        public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<ValueTuple<int, int, string, MyClass>>
+        public class MyKeywordTupleEventConverter : WampEventValueTupleConverter<(int number1, int number2, string c, MyClass d)>
         {
         }
     }

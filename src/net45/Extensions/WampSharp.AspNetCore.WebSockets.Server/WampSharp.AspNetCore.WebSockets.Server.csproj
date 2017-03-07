@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>WampSharp Microsoft.AspNetCore.WebSockets.Server support</Description>
+    <AssemblyTitle>WampSharp AspNetCore WebSockets Server support</AssemblyTitle>
+    <VersionPrefix>1.2.3</VersionPrefix>
+    <Authors>CodeSharp</Authors>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <AssemblyName>WampSharp.AspNetCore.WebSockets.Server</AssemblyName>
+    <PackageId>WampSharp.AspNetCore.WebSockets.Server</PackageId>
+    <PackageTags>websockets;wampws;rpc;pubsub;wampv1;wampv2;aspnetcore</PackageTags>
+    <PackageProjectUrl>https://github.com/Code-Sharp/WampSharp/</PackageProjectUrl>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WampSharp.WebSockets\WampSharp.WebSockets.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>
