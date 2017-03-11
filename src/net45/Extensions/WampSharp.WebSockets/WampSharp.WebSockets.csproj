@@ -5,7 +5,7 @@
     <AssemblyTitle>WampSharp System.Net.WebSockets.WebSocket support</AssemblyTitle>
     <VersionPrefix>1.2.3</VersionPrefix>
     <Authors>CodeSharp</Authors>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFrameworks>net45;netstandard1.3</TargetFrameworks>
     <AssemblyName>WampSharp.WebSockets</AssemblyName>
     <PackageId>WampSharp.WebSockets</PackageId>
     <PackageTags>websockets;wampws;rpc;pubsub;wampv1;wampv2</PackageTags>
@@ -18,15 +18,12 @@
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\WampSharp\WampSharp.csproj" />
   </ItemGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-  </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
     <PackageReference Include="System.Net.WebSockets.Client" Version="4.3.0" />
