@@ -5,7 +5,7 @@
     <AssemblyTitle>WampSharp Newtonsoft.Msgpack binding</AssemblyTitle>
     <VersionPrefix>1.2.3</VersionPrefix>
     <Authors>CodeSharp</Authors>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFrameworks>net45;net40;netstandard1.3;</TargetFrameworks>
     <AssemblyName>WampSharp.NewtonsoftMsgpack</AssemblyName>
     <PackageId>WampSharp.NewtonsoftMsgpack</PackageId>
     <PackageTags>websockets;wampws;rpc;pubsub;newtonsoft;msgpack;wampv2</PackageTags>
@@ -27,5 +27,9 @@
   <ItemGroup>
     <ProjectReference Include="..\WampSharp.NewtonsoftJson\WampSharp.NewtonsoftJson.csproj" />
   </ItemGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
 
 </Project>
