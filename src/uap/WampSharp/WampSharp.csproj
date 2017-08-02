@@ -352,6 +352,9 @@
     <Compile Include="..\..\net45\WampSharp\Core\Utilities\TaskExtensions.cs">
       <Link>Core\Utilities\TaskExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\..\net45\WampSharp\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="..\..\net45\WampSharp\WAMP2\V2\Api\CalleeProxy\CachedCalleeProxyInterceptor.cs">
       <Link>WAMP2\V2\Api\CalleeProxy\CachedCalleeProxyInterceptor.cs</Link>
     </Compile>
@@ -1708,7 +1711,6 @@
     <Compile Include="..\..\net45\WampSharp\WAMP2\V2\Api\CalleeProxy\Callbacks\Async\AsyncOperationCallback.cs">
       <Link>WAMP2\V2\Api\CalleeProxy\Callbacks\Async\AsyncOperationCallback.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\WampSharp.rd.xml" />
   </ItemGroup>
   <ItemGroup>

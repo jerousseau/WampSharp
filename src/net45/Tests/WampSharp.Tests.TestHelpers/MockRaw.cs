@@ -97,4 +97,14 @@ namespace WampSharp.Tests.TestHelpers
             }
         }
     }
+
+#if WINDOWS_UWP
+    internal static class ReflectionExtensions
+    {
+        public static bool IsDefined(this Type type, Type attributeType, bool inherit)
+        {
+            return type.GetTypeInfo().IsDefined(attributeType, inherit);
+        }
+    }
+#endif
 }
