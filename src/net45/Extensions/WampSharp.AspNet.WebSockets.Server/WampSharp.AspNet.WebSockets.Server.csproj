@@ -5,7 +5,7 @@
     <AssemblyTitle>WampSharp AspNet WebSockets Server support</AssemblyTitle>
     <VersionPrefix>1.2.3</VersionPrefix>
     <Authors>CodeSharp</Authors>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net46;net45</TargetFramework>
     <AssemblyName>WampSharp.AspNet.WebSockets.Server</AssemblyName>
     <PackageId>WampSharp.AspNet.WebSockets.Server</PackageId>
     <PackageTags>websockets;wampws;rpc;pubsub;wampv1;wampv2;aspnet</PackageTags>

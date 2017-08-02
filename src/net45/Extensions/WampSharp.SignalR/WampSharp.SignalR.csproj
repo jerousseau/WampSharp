@@ -4,7 +4,7 @@
     <Description>SignalR transport for WampSharp</Description>
     <AssemblyTitle>WampSharp.SignalR</AssemblyTitle>
     <Authors>CodeSharp</Authors>
-    <TargetFrameworks>net45;</TargetFrameworks>
+    <TargetFrameworks>net46;net45;</TargetFrameworks>
     <AssemblyName>WampSharp.Vtortola</AssemblyName>
     <PackageId>WampSharp.Vtortola</PackageId>
     <PackageTags>websockets;wampws;rpc;pubsub;signalr;wampv2</PackageTags>

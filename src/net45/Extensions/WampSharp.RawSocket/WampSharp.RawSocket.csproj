@@ -5,7 +5,7 @@
     <AssemblyTitle>WampSharp RawSocket support</AssemblyTitle>
     <VersionPrefix>1.2.3</VersionPrefix>
     <Authors>CodeSharp</Authors>
-    <TargetFrameworks>net45;netstandard1.3;</TargetFrameworks>
+    <TargetFrameworks>net46;net45;netstandard1.3;</TargetFrameworks>
     <AssemblyName>WampSharp.RawSocket</AssemblyName>
     <PackageId>WampSharp.RawSocket</PackageId>
     <PackageTags>websockets;wampws;rpc;pubsub;wampv2;rawsocket</PackageTags>
@@ -29,7 +29,7 @@
     <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net45' ">
     <Reference Include="Microsoft.CSharp" />
     <PackageReference Include="System.Buffers" Version="4.3.0" />
   </ItemGroup>

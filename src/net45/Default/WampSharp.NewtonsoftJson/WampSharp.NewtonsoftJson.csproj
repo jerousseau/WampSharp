@@ -5,7 +5,7 @@
     <AssemblyTitle>WampSharp Newtonsoft.Json binding</AssemblyTitle>
     <VersionPrefix>1.2.3</VersionPrefix>
     <Authors>CodeSharp</Authors>
-    <TargetFrameworks>net45;net40;netstandard1.3;</TargetFrameworks>
+    <TargetFrameworks>net46;net45;net40;netstandard1.3;</TargetFrameworks>
     <AssemblyName>WampSharp.NewtonsoftJson</AssemblyName>
     <PackageId>WampSharp.NewtonsoftJson</PackageId>
     <PackageTags>websockets;wampws;rpc;pubsub;newtonsoft;json;wampv1;wampv2</PackageTags>
@@ -25,7 +25,7 @@
     <ProjectReference Include="..\..\WampSharp\WampSharp.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net40' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net40' ">
     <PackageReference Include="Newtonsoft.Json" Version="6.0.5" />
   </ItemGroup>
 

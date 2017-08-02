@@ -4,7 +4,7 @@
     <Description>WampSharp Owin support</Description>
     <AssemblyTitle>WampSharp.Owin</AssemblyTitle>
     <Authors>CodeSharp</Authors>
-    <TargetFrameworks>net45;</TargetFrameworks>
+    <TargetFrameworks>net46;net45;</TargetFrameworks>
     <AssemblyName>WampSharp.Owin</AssemblyName>
     <PackageId>WampSharp.Owin</PackageId>
     <PackageTags>websockets;owin;wampws;rpc;pubsub;wampv1;wampv2</PackageTags>

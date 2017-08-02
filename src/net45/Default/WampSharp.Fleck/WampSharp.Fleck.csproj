@@ -4,7 +4,7 @@
     <Description>WampSharp Fleck transport</Description>
     <AssemblyTitle>WampSharp Fleck transport</AssemblyTitle>
     <Authors>CodeSharp</Authors>
-    <TargetFrameworks>net45;net40</TargetFrameworks>
+    <TargetFrameworks>net46;net45;net40</TargetFrameworks>
     <AssemblyName>WampSharp.Fleck</AssemblyName>
     <PackageId>WampSharp.Fleck</PackageId>
     <PackageTags>websockets;wampws;rpc;pubsub;fleck;json;wampv1;wampv2</PackageTags>

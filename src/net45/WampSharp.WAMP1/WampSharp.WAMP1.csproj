@@ -4,7 +4,7 @@
     <Description>WampSharp WAMP1 support</Description>
     <AssemblyTitle>WampSharp WAMP1 support</AssemblyTitle>
     <Authors>CodeSharp</Authors>
-    <TargetFrameworks>net45;net40</TargetFrameworks>
+    <TargetFrameworks>net46;net45;net40</TargetFrameworks>
     <AssemblyName>WampSharp.WAMP1</AssemblyName>
     <PackageId>WampSharp.WAMP1</PackageId>
     <PackageTags>websockets;wampws;rpc;pubsub;wampv1</PackageTags>
