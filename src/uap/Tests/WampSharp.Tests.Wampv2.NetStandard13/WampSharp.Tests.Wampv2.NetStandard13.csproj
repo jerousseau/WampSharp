@@ -14,10 +14,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
     <PackageReference Include="Moq" Version="4.7.99" />
-    <PackageReference Include="NETStandard.Library" Version="1.6.1" />
     <PackageReference Include="NUnit" Version="3.7.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
-    <PackageReference Include="System.Reactive" Version="3.1.1" />
     <ProjectReference Include="..\..\WampSharp.NetStandard13\WampSharp.NetStandard13.csproj" />
     <ProjectReference Include="..\..\Default\WampSharp.NewtonsoftJson.NetStandard13\WampSharp.NewtonsoftJson.NetStandard13.csproj" />
     <ProjectReference Include="..\WampSharp.Tests.TestHelpers.NetStandard13\WampSharp.Tests.TestHelpers.NetStandard13.csproj" />
