@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WampSharp.NewtonsoftMsgpack
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WampSharp.WebSocket4Net", "Default\WampSharp.WebSocket4Net\WampSharp.WebSocket4Net.csproj", "{78C4FB25-2EEA-4178-9D2E-447215A09A70}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WampSharp.Default.Client", "WampSharp.Default.Client\WampSharp.Default.Client.csproj", "{A68B9369-5EFB-43D4-979D-25DD0AAB540C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{78C4FB25-2EEA-4178-9D2E-447215A09A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78C4FB25-2EEA-4178-9D2E-447215A09A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78C4FB25-2EEA-4178-9D2E-447215A09A70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68B9369-5EFB-43D4-979D-25DD0AAB540C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68B9369-5EFB-43D4-979D-25DD0AAB540C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68B9369-5EFB-43D4-979D-25DD0AAB540C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68B9369-5EFB-43D4-979D-25DD0AAB540C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
